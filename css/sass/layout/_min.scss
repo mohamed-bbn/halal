@@ -292,8 +292,161 @@
             display: flex;
             margin-top: $com-spacing-3;
             svg {
+                min-width: 25px;
+                max-width: 25px;
+                height: 25px;
                 margin-left: $com-spacing-2;
             }
+        }
+    }
+}
+
+.about__expo__item {
+    min-height: 1000px;
+    @media (max-width: 999px) {
+        min-height: inherit;
+    }
+    .item {
+        max-width: 44%;
+        border-right: 1px solid #00423959;
+        margin-right: 30px;
+        @media (max-width: 999px) {
+            max-width: $fullwidth;
+        }
+        .flex {
+            display: flex;
+            margin-bottom: $com-spacing-8;
+            svg {
+                min-width: 60px;
+                max-width: 60px;
+                height: 60px;
+                background: #F8F8F8;
+                padding: $com-spacing-2 $zero;
+                margin: $zero -30px $zero $com-spacing-6;
+                @media (max-width: 999px) {
+                    margin-left: $com-spacing-3;
+                }
+            }
+            &:last-child {
+                margin: $zero;
+            }
+            &:first-child {
+                svg {
+                    min-width: 128px;
+                    max-width: 128px;
+                    height: 128px;
+                    margin: $zero -64px $zero $com-spacing-6;
+                    @media (max-width: 999px) {
+                        min-width: 60px;
+                        max-width: 60px;
+                        height: 60px;
+                        margin: $zero -30px $zero $com-spacing-3;
+                    }
+                }
+            }
+        }
+    }
+    .container {
+        z-index: 10;
+    }
+    .photo {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        left: $zero;
+        top: $zero;
+        width: $fullwidth;
+        height: $fullwidth;
+        padding: $com-spacing-8 $zero;
+        overflow: hidden;
+        @media (max-width: 1199px) {}
+        @media (max-width: 999px) {
+            // position: relative;
+            // width: $fullwidth;
+            // height: auto;
+            // top: auto;
+            // border-radius: $zero;
+            // border: $zero;
+            // text-align: center;
+            // margin-top: $com-spacing-6;
+            display: none;
+        }
+        img {
+            max-width: $fullwidth;
+            max-height: $fullwidth;
+            @media (max-width: 1199px) {
+                max-width: 60%;
+            }
+            @media (max-width: 999px) {}
+        }
+    }
+    .title {}
+    .list {
+        margin-top: $com-spacing-3;
+        li {
+            display: flex;
+            margin-top: $com-spacing-3;
+            svg {
+                min-width: 25px !important;
+                max-width: 25px !important;
+                height: 25px !important;
+                margin: $zero !important;
+                margin-left: $com-spacing-2 !important;
+                padding: $zero !important;
+            }
+        }
+    }
+}
+
+.participate__expo__item {
+    .rowbox {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $com-spacing-6;
+        margin-top: $com-spacing-6;
+        @media (max-width: 999px) {
+            grid-template-columns: 1fr 1fr;
+            gap: $com-spacing-3;
+            margin-top: $com-spacing-3;
+        }
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
+    }
+    .item {
+        position: relative;
+        border-radius: 10px;
+        padding: $com-spacing-6;
+        padding-bottom: $com-spacing-7;
+        background: $white;
+        border: 1px solid $dark;
+        overflow: hidden;
+        &::before {
+            content: "";
+            position: absolute;
+            left: $zero;
+            bottom: $zero;
+            width: $fullwidth;
+            height: 22px;
+            background: $dark url(../images/participate.png) no-repeat center center/cover;
+        }
+        .photo {
+            @include flex;
+            width: $fullwidth;
+            height: 250px;
+            img {
+                max-width: $fullwidth;
+                max-height: $fullwidth;
+            }
+        }
+        .title {
+            font-size: 26px;
+            text-align: center;
+            margin-top: $com-spacing-3;
+        }
+        p {
+            margin-top: $com-spacing-1;
+            text-align: center;
         }
     }
 }

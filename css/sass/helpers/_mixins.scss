@@ -199,7 +199,6 @@
 }
 
 @mixin map-back {
-    background: $white url(../images/slides/img1.jpg) no-repeat fixed center center/cover;
     @include flex;
     @media (max-width: 999px) {
         display: block;
