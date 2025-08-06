@@ -1,0 +1,195 @@
+@import 'helpers/mixins';
+@import 'helpers/variables';
+@import 'layout/header';
+@import 'layout/slider';
+@import 'layout/min';
+@import 'layout/footer';
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+ul,
+li,
+hr,
+strong,
+b,
+input,
+select,
+textarea,
+.highcharts-title,
+.highcharts-axis-labels,
+.highcharts-yaxis-title {
+    @include reset;
+}
+
+body {
+    background: #F8F8F8;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: #D9D9D9;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $dark;
+    cursor: pointer;
+}
+
+.che-box {
+    @include check-box;
+}
+
+textarea.form-control {
+    height: 250px;
+    resize: none;
+}
+
+section {
+    @include section;
+}
+
+.title {
+    @include title;
+}
+
+.bottom {
+    @include bottom;
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    border: $zero;
+    margin: $zero;
+    margin-top: $com-spacing-4;
+    padding: $com-spacing-4;
+    border-radius: 4px;
+    height: 60px;
+    strong {
+        margin-left: $com-spacing-2;
+        color: #856404;
+    }
+    a {
+        text-decoration: underline;
+        color: $white;
+        font-weight: 400;
+        &:hover {
+            text-decoration: $none;
+        }
+    }
+    .text-mass {
+        margin: $zero !important;
+        margin-right: $com-spacing-3 !important;
+    }
+    p {
+        color: $white;
+        margin: $zero !important;
+    }
+    &.alert-success {
+        background: linear-gradient(303.91deg, #1F7A66 7.57%, #60B3A7 94.39%);
+    }
+    &.alert-danger {
+        background: linear-gradient(303.91deg, #C24848 7.57%, #D34A4A 94.39%);
+    }
+}
+
+.form-control {
+    @include input
+}
+
+select.form-control {
+    -webkit-appearance: none;
+    background: $white url(../images/arrow.svg) no-repeat;
+    background-position: $com-spacing-3 $com-spacing-4;
+    @include transition(all 0.5s ease-in-out 0s);
+}
+
+.pagination {
+    width: $fullwidth;
+    margin-top: $com-spacing-7;
+    justify-content: center;
+    overflow: hidden;
+    @media (max-width: 999px) {
+        margin-top: $com-spacing-6;
+        padding-bottom: $com-spacing-3;
+        overflow-x: scroll;
+        justify-content: flex-start;
+    }
+    li {
+        display: $inline;
+        margin: $zero $com-spacing-2;
+        a,
+        span {
+            @include flex;
+            text-align: center;
+            color: $blak;
+            @include border-radius(16px !important);
+            min-width: 44px;
+            height: 44px;
+            border: $zero;
+            background: #E6E6E6;
+            @include transition(all 0.5s ease-in-out 0s);
+            color: #8B8B8B;
+        }
+        svg {
+            width: 12px;
+            height: 12px;
+            @include transition(all 0.5s ease-in-out 0s);
+        }
+        &:first-child,
+        &:last-child {
+            min-width: 84px;
+            a {
+                color: $blue;
+                font-size: 12px;
+                svg {
+                    max-width: 12px;
+                    height: 12px;
+                    fill: $blue;
+                }
+            }
+        }
+        &:last-child {
+            margin-left: $zero;
+            svg {
+                transform: rotate(90deg);
+                margin-right: $com-spacing-1;
+            }
+        }
+        &:first-child {
+            margin-right: $zero;
+            svg {
+                transform: rotate(-90deg);
+                margin-left: $com-spacing-1;
+            }
+        }
+    }
+    .page-link.active,
+    .page-link:hover {
+        background: $blue !important;
+        color: $white !important;
+        svg {
+            fill: $white;
+        }
+    }
+}
+
+.social {
+    @include social;
+}
+
+.map-back {
+    @include map-back;
+}

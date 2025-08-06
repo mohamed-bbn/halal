@@ -1,0 +1,333 @@
+.header {
+    position: relative;
+    width: $fullwidth;
+    background: $dark;
+    @include transition(all 0.5s ease-in-out 0s);
+    box-shadow: 0px 4px 28px 0px #00000021;
+    z-index: 1002;
+    @media (max-width: 999px) {
+        padding: $com-spacing-2 $zero;
+    }
+    &.sticky {
+        position: fixed;
+        top: $zero;
+        left: $zero;
+        @include transition(all 0.5s ease-in-out 0s);
+        @media (max-width: 999px) {
+            padding: $com-spacing-1 $zero;
+        }
+        .logo {
+            img {
+                max-width: 56px;
+            }
+        }
+        .menu-link {
+            height: 92px;
+        }
+        .bottoms .dropdown .dropdown-menu {
+            top: 58px !important;
+            @media (max-width: 999px) {
+                top: 52px !important;
+            }
+        }
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .burger {
+        position: absolute;
+        right: 84px;
+        display: none;
+        cursor: pointer;
+        user-select: none;
+        width: 24px;
+        height: 1rem;
+        background: transparent;
+        &-line {
+            position: absolute;
+            display: block;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            opacity: 1;
+            border: none;
+            outline: none;
+            background: $white;
+            &:nth-child(1) {
+                top: 0px;
+            }
+            &:nth-child(2) {
+                top: 0.5rem;
+                width: 80%;
+            }
+            &:nth-child(3) {
+                top: 1rem;
+                width: 60%;
+            }
+        }
+        // Responsive Media Query
+        @media only screen and (max-width: 999px) {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    .logo {
+        img {
+            max-width: 76px;
+            @include transition(all 0.5s ease-in-out 0s);
+            @media (max-width: 999px) {
+                max-width: 56px;
+            }
+        }
+    }
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        padding: $zero;
+        .logo {
+            display: none;
+            margin: $com-spacing-3 $com-spacing-3 $zero $zero;
+            @media screen and (max-width: 999px) {
+                display: block;
+            }
+            img {
+                max-width: 56px;
+            }
+        }
+        .cancel {
+            display: none;
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            z-index: 10;
+            svg {
+                width: 16px;
+                height: 16px;
+                fill: $white;
+            }
+        }
+        @media screen and (max-width: 999px) {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 290px;
+            height: 100%;
+            z-index: 10;
+            overflow: hidden;
+            overflow-y: auto;
+            visibility: hidden;
+            background: $dark;
+            transition: all 0.5s ease;
+            &.active {
+                right: 0rem;
+                opacity: 1;
+                visibility: visible;
+                display: block;
+            }
+            .cancel {
+                display: block;
+            }
+        }
+    }
+    // Menu
+    .menu {
+        display: flex;
+        align-items: center;
+        &-item {
+            position: relative;
+            display: inline-block;
+            margin: $zero $com-spacing-3;
+            @media (min-width: 1600px) {}
+        }
+        &-link {
+            @include flex;
+            position: relative;
+            cursor: pointer;
+            color: $white;
+            height: 120px;
+            font-size: 18px;
+            @include transition(all 0.5s ease-in-out 0s);
+            @media (min-width: 1600px) {
+                font-size: 22px;
+            }
+            svg {
+                width: 14px;
+                height: 14px;
+                fill: $white;
+                @media only screen and (max-width: 999px) {
+                    z-index: -1;
+                }
+            }
+        }
+        // Responsive Media Query
+        @media only screen and (min-width: 999px) {
+            &-dropdown:hover {
+                >.submenu {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                    z-index: 100;
+                }
+            }
+        }
+        // Responsive Media Query
+        @media only screen and (max-width: 999px) {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-top: 92px;
+            &-item {
+                display: block;
+                margin: $zero;
+            }
+            &-link {
+                justify-content: space-between;
+                padding: $com-spacing-1 $com-spacing-3;
+                height: $auto !important;
+            }
+        }
+        .activelink,
+        .menu-item:hover {
+            .menu-link {
+                color: $beige;
+            }
+        }
+        .activelink {
+            .submenu {
+                @media only screen and (max-width: 999px) {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: none;
+                }
+            }
+        }
+    }
+    // Submenu
+    .submenu {
+        position: absolute;
+        top: $fullwidth;
+        right: $zero;
+        width: 180px;
+        height: auto;
+        visibility: hidden;
+        transform: translateY(1rem);
+        background: $white;
+        box-shadow: 0px 4px 8px 0px #00000033;
+        transition: all 0.5s ease-in-out;
+        border-radius: $zero $zero 8px 8px;
+        overflow: hidden;
+        // Responsive Media Query
+        @media only screen and (max-width: 999px) {
+            display: block;
+            position: relative;
+            max-height: 0px;
+            outline: none;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0px);
+            box-shadow: none;
+            padding: $zero;
+            background: $ofwhite;
+            width: $fullwidth;
+            border-radius: $zero;
+        }
+        a {
+            display: block;
+            @include transition(all 0.5s ease-in-out 0s);
+            border-bottom: 1px solid $dark;
+            padding: $com-spacing-2 $com-spacing-3;
+            color: $dark;
+            @media only screen and (max-width: 999px) {
+                padding: $com-spacing-1 $com-spacing-3;
+            }
+            &:last-child {
+                border-bottom: $zero;
+            }
+            &:hover {
+                color: $beige;
+            }
+        }
+    }
+    // Overlay
+    .overlay {
+        position: fixed;
+        inset: $zero;
+        height: $fullwidth;
+        width: $fullwidth;
+        z-index: 9;
+        visibility: hidden;
+        // transition: all 0.35s ease-in-out;
+        background-color: rgba(0, 0, 0, 0.65);
+        // Responsive Media Query
+        @media only screen and (max-width: 999px) {
+            &.active {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    /* End NavMenu */
+    .bottoms {
+        display: flex;
+        align-items: center;
+        .dropdown {
+            margin-left: $com-spacing-3;
+            padding-left: $com-spacing-3;
+            border-left: 1px solid #ccc;
+            .dropdown-toggle {
+                cursor: pointer;
+                &::after {
+                    display: none;
+                }
+                svg {
+                    fill: $white;
+                }
+            }
+            .dropdown-menu {
+                top: 72px !important;
+                left: 0px !important;
+                width: 160px;
+                background: $white;
+                padding: $com-spacing-3;
+                box-shadow: 0px 4px 8px 0px #00000033;
+                border-radius: $zero $zero 8px 8px;
+                border: $zero !important;
+                transform: translate(0px, 0px) !important;
+                @include transition(all 0.5s ease-in-out 0s);
+                @media (max-width: 999px) {
+                    top: 56px !important;
+                }
+                a {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    @include transition(all 0.5s ease-in-out 0s);
+                    color: $dark;
+                    margin-bottom: $com-spacing-2;
+                    &:last-child {
+                        margin: $zero;
+                    }
+                    svg {
+                        width: 12px;
+                        height: 12px;
+                        opacity: 0;
+                        fill: $dark;
+                    }
+                    &.active {
+                        svg {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//////////////////////// End header

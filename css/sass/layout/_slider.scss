@@ -1,0 +1,58 @@
+.slider__item {
+    @include flex;
+    height: calc(100vh - 120px);
+    @media (max-width: 999px) {
+        padding: $com-spacing-8 $zero;
+    }
+    &::after {
+        @include overlay;
+        background: #004239E5;
+    }
+    img {
+        position: absolute;
+        left: $zero;
+        top: $zero;
+        width: $fullwidth;
+        height: $fullwidth;
+        object-fit: cover;
+    }
+    .container {
+        z-index: 10;
+        text-align: center;
+    }
+    .title,
+    p {
+        text-align: center;
+        color: $white;
+    }
+    p {
+        margin-top: $com-spacing-3;
+        font-size: 28px;
+        line-height: 45px;
+        @media (max-width: 999px) {
+            font-size: 20px;
+            line-height: 28px;
+        }
+    }
+    .title {
+        font-size: 55px;
+        @media (max-width: 999px) {
+            font-size: 35px;
+        }
+    }
+    .bottom {
+        background: $white;
+        color: $dark;
+        width: 564px;
+        margin-top: $com-spacing-5;
+        @media (max-width: 600px) {
+            width: $fullwidth;
+        }
+        &:hover {
+            background: $dark;
+            color: $white;
+        }
+    }
+}
+
+//////////////////////// End Slider

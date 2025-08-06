@@ -1,0 +1,299 @@
+.about__item {
+    .inner {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: $fullwidth;
+        padding: $com-spacing-6;
+        padding-right: 200px;
+        border-radius: 15px;
+        background: $ofwhite;
+        overflow: hidden;
+        @media (max-width: 999px) {
+            display: block;
+            padding-right: $com-spacing-7;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            right: $zero;
+            top: $zero;
+            width: 192px;
+            height: $fullwidth;
+            background: $dark url(../images/bg.png) no-repeat center center/cover;
+            @media (max-width: 999px) {
+                width: 22px;
+            }
+        }
+        .photo {
+            @include flex;
+            min-width: 400px;
+            max-width: 400px;
+            height: 400px;
+            margin-left: $com-spacing-6;
+            @media (max-width: 999px) {
+                min-width: $fullwidth;
+                max-width: $fullwidth;
+                height: auto;
+                margin: $zero;
+                margin-bottom: $com-spacing-6;
+            }
+            img {
+                max-width: $fullwidth;
+                max-height: $fullwidth;
+            }
+        }
+        .title {
+            @media (max-width: 999px) {
+                text-align: center;
+            }
+        }
+        p {
+            margin-top: $com-spacing-2;
+            @media (max-width: 999px) {
+                text-align: center;
+            }
+        }
+    }
+    &.csu-style {
+        .inner {
+            padding-right: 200px;
+            @media (max-width: 999px) {
+                padding-right: $com-spacing-7;
+            }
+            .subitem {
+                width: 50%;
+                padding: $zero $com-spacing-8;
+                @media (max-width: 999px) {
+                    width: $fullwidth;
+                    padding: $zero;
+                    margin-bottom: $com-spacing-6;
+                    &:last-child {
+                        margin: $zero;
+                    }
+                }
+                .bold {
+                    font-size: 25px;
+                    @media (max-width: 999px) {
+                        display: block;
+                        text-align: center;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.participating__item {
+    background: $white;
+    .rowbox {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $com-spacing-6;
+        margin-top: $com-spacing-6;
+        @media (max-width: 999px) {
+            grid-template-columns: 1fr 1fr;
+            gap: $com-spacing-3;
+            margin-top: $com-spacing-3;
+        }
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
+    }
+    .item {
+        position: relative;
+        border-radius: 10px;
+        padding: $com-spacing-4;
+        padding-right: $com-spacing-7;
+        background: $white;
+        border: 1px solid $dark;
+        overflow: hidden;
+        &::before {
+            content: "";
+            position: absolute;
+            right: $zero;
+            top: $zero;
+            width: 22px;
+            height: $fullwidth;
+            background: $dark url(../images/bg.png) no-repeat center center/cover;
+        }
+        .title {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        p {
+            margin-top: $com-spacing-1;
+        }
+    }
+}
+
+.sectors__item {
+    margin-top: $com-spacing-6;
+    background: $white;
+    &::before {
+        content: "";
+        position: absolute;
+        right: $zero;
+        top: $zero;
+        width: 192px;
+        height: $fullwidth;
+        background: url(../images/bg2.png) no-repeat center center/cover;
+        @media (max-width: 999px) {
+            width: 100px;
+        }
+    }
+    .rowbox {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: $com-spacing-8;
+        margin-top: $com-spacing-8;
+        @media (max-width: 999px) {
+            grid-template-columns: 1fr 1fr;
+            gap: $com-spacing-3;
+            margin-top: $com-spacing-3;
+        }
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
+    }
+    .item {
+        &:last-child {
+            display: flex;
+            align-items: flex-end
+        }
+        .bottom {
+            width: 262px;
+            height: 128px;
+            background: #F0F3E7;
+            color: $dark;
+            font-size: 25px;
+            font-weight: 700;
+            @media (max-width: 767px) {
+                width: $fullwidth;
+                height: auto;
+                font-size: 18px;
+            }
+            &:hover {
+                background: $dark;
+                color: $white;
+            }
+        }
+        .icon {
+            @include flex;
+            height: 105px;
+            svg {
+                max-width: 105px;
+                max-height: 105px;
+            }
+        }
+        .title {
+            text-align: center;
+            margin-top: $com-spacing-3;
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+}
+
+.whyparticipate__item {
+    margin-top: $com-spacing-6;
+    background: $ofwhite url(../images/whyparticipate.png) no-repeat center center/cover;
+    .container {
+        display: flex;
+        align-items: center;
+        @media (max-width: 999px) {
+            display: block;
+        }
+    }
+    .photo {
+        @include flex;
+        min-width: 550px;
+        max-width: 550px;
+        height: 550px;
+        @media (max-width: 999px) {
+            min-width: $fullwidth;
+            max-width: $fullwidth;
+            height: auto;
+            margin-top: $com-spacing-6;
+        }
+        img {
+            max-width: $fullwidth;
+            max-height: $fullwidth;
+        }
+    }
+    .title {
+        @media (max-width: 999px) {
+            text-align: center;
+        }
+    }
+    p {
+        margin-top: $com-spacing-3;
+        max-width: 70%;
+        @media (max-width: 999px) {
+            text-align: center;
+            max-width: $fullwidth;
+        }
+    }
+}
+
+.goals__item {
+    min-height: 500px;
+    @media (max-width: 999px) {
+        min-height: inherit;
+    }
+    .photo {
+        position: absolute;
+        left: $zero;
+        top: $zero;
+        width: 50%;
+        height: $fullwidth;
+        overflow: hidden;
+        @media (max-width: 999px) {
+            position: relative;
+            width: $fullwidth;
+            height: auto;
+            top: auto;
+            border-radius: $zero;
+            border: $zero;
+            text-align: center;
+            margin-top: $com-spacing-6;
+        }
+        img {
+            width: $fullwidth;
+            max-height: $fullwidth;
+            @media (max-width: 999px) {
+                width: initial;
+                max-height: $fullwidth;
+                max-width: $fullwidth;
+            }
+        }
+    }
+    .item {
+        max-width: 44%;
+        @media (max-width: 999px) {
+            max-width: $fullwidth;
+        }
+    }
+    .title {
+        display: flex;
+        align-items: center;
+        svg {
+            margin-left: $com-spacing-2;
+            max-width: 80px;
+        }
+        @media (max-width: 999px) {
+            text-align: center;
+        }
+    }
+    .list {
+        margin-top: $com-spacing-6;
+        li {
+            display: flex;
+            margin-top: $com-spacing-3;
+            svg {
+                margin-left: $com-spacing-2;
+            }
+        }
+    }
+}
