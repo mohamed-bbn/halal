@@ -83,4 +83,25 @@ $(window).on("load", function() {
 
     // End Scroll Top
 
+
+    $("#logoUpload").on("change", function() {
+        let file = this.files[0];
+        if (file) {
+            $(".file-name").text(file.name);
+            $(".remove-file").show();
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                $("#previewImage").attr("src", e.target.result).show();
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+
+    $(".remove-file").on("click", function() {
+        $("#logoUpload").val(""); //        
+        $(".file-name").text("");
+        $("#previewImage").hide().attr("src", "");
+        $(this).hide();
+    });
+
 });
