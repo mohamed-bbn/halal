@@ -33,6 +33,34 @@ body {
     background: #F8F8F8;
 }
 
+@font-face {
+    font-family: 'expo-arabic-light';
+    src: url('../fonts/expo-arabic-light.svg#expo-arabic-light') format('svg'), url('../fonts/expo-arabic-light.ttf') format('truetype'), url('../fonts/expo-arabic-light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'expo-arabic-medium';
+    src: url('../fonts/expo-arabic-medium.svg#expo-arabic-medium') format('svg'), url('../fonts/expo-arabic-medium.ttf') format('truetype'), url('../fonts/expo-arabic-medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'expo-arabic-bold';
+    src: url('../fonts/expo-arabic-bold.svg#expo-arabic-bold') format('svg'), url('../fonts/expo-arabic-bold.ttf') format('truetype'), url('../fonts/expo-arabic-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'expo-arabic-book';
+    src: url('../fonts/expo-arabic-book.svg#expo-arabic-book') format('svg'), url('../fonts/expo-arabic-book.ttf') format('truetype'), url('../fonts/expo-arabic-book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 ::-webkit-scrollbar {
     width: 5px;
     height: 2px;

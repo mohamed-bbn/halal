@@ -246,7 +246,7 @@
         position: absolute;
         left: $zero;
         top: $zero;
-        width: 50%;
+        width: 600px;
         height: $fullwidth;
         overflow: hidden;
         @media (max-width: 999px) {
@@ -258,6 +258,9 @@
             border: $zero;
             text-align: center;
             margin-top: $com-spacing-6;
+        }
+        @media (min-width:1600px) {
+            width: 800px;
         }
         img {
             width: $fullwidth;

@@ -556,7 +556,7 @@
     position: absolute;
     left: 0px;
     top: 0px;
-    width: 50%;
+    width: 600px;
     height: 100%;
     overflow: hidden; }
     @media (max-width: 999px) {
@@ -569,6 +569,9 @@
         border: 0px;
         text-align: center;
         margin-top: 24px; } }
+    @media (min-width: 1600px) {
+      .goals__item .photo {
+        width: 800px; } }
     .goals__item .photo img {
       width: 100%;
       max-height: 100%; }
@@ -1247,11 +1250,31 @@ textarea,
   text-decoration: none;
   list-style: none;
   color: #1a554d;
-  font: normal 500 16px/28px "Noto Sans Arabic", sans-serif; }
+  font: normal 600 16px/28px "expo-arabic-light"; }
 
 body {
   background: #F8F8F8; }
 
+@font-face {
+  font-family: 'expo-arabic-light';
+  src: url("../fonts/expo-arabic-light.svg#expo-arabic-light") format("svg"), url("../fonts/expo-arabic-light.ttf") format("truetype"), url("../fonts/expo-arabic-light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'expo-arabic-medium';
+  src: url("../fonts/expo-arabic-medium.svg#expo-arabic-medium") format("svg"), url("../fonts/expo-arabic-medium.ttf") format("truetype"), url("../fonts/expo-arabic-medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'expo-arabic-bold';
+  src: url("../fonts/expo-arabic-bold.svg#expo-arabic-bold") format("svg"), url("../fonts/expo-arabic-bold.ttf") format("truetype"), url("../fonts/expo-arabic-bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'expo-arabic-book';
+  src: url("../fonts/expo-arabic-book.svg#expo-arabic-book") format("svg"), url("../fonts/expo-arabic-book.ttf") format("truetype"), url("../fonts/expo-arabic-book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 ::-webkit-scrollbar {
   width: 5px;
   height: 2px; }
@@ -1314,9 +1337,10 @@ section {
       padding: 24px 0px; } }
 
 .title {
-  font-size: 40px;
+  font-size: 34px;
   line-height: 150%;
   color: #1a554d;
+  font-family: 'expo-arabic-medium';
   -moz-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
   -webkit-transition: all 0.5s ease-in-out 0s;
@@ -1565,11 +1589,9 @@ select.form-control {
       max-width: 100%;
       max-height: 100%; }
   .map-back .title {
-    color: #fff;
-    font-size: 38px; }
+    color: #fff; }
     @media (max-width: 999px) {
       .map-back .title {
-        font-size: 28px;
         text-align: center; }
         .map-back .title br {
           display: none; } }
