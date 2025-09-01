@@ -104,4 +104,92 @@ $(window).on("load", function() {
         $(this).hide();
     });
 
+    $(".mobile-number").intlTelInput({
+        //autoFormat: false,
+        //autoHideDialCode: false,
+        //defaultCountry: "jp",
+        //nationalMode: true,
+        //numberType: "MOBILE",
+        //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+        //preferredCountries: ['cn', 'jp'],
+        //responsiveDropdown: true,
+        //  utilsScript: "lib/libphonenumber/build/utils.js"
+    });
+
+    $(".custom-file-input").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+
+    $(function() {
+
+        // We can attach the `fileselect` event to all file inputs on the page
+        $(document).on('change', ':file', function() {
+            var input = $(this),
+                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [numFiles, label]);
+        });
+
+        // We can watch for our custom `fileselect` event like this
+        $(document).ready(function() {
+            $(':file').on('fileselect', function(event, numFiles, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+
+            });
+        });
+
+    });
+
+
+
 });
+
+
+function initSlider(sliderID, carouselID) {
+    const $carouselItems = $('#' + carouselID + ' .slides li');
+    const showNav = $carouselItems.length > 3;
+
+    $('#' + carouselID).flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 180,
+        asNavFor: '#' + sliderID,
+        directionNav: showNav
+    });
+
+    $('#' + sliderID).flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: true,
+        slideshowSpeed: 3000,
+        sync: '#' + carouselID
+    });
+}
+
+
+$(window).on('load', function() {
+    initSlider('slider1', 'carousel1');
+    initSlider('slider2', 'carousel2');
+});
+
+
+
+function execCmd(command) {
+    document.execCommand(command, false, null);
+}
+
+function execCmdArg(command, value) {
+    document.execCommand(command, false, value);
+}

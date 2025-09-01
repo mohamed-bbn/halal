@@ -178,6 +178,7 @@
     color: $dark;
     // overflow: hidden;
     font-family: 'expo-arabic-medium';
+    font-weight: 500;
     @include transition(all 0.5s ease-in-out 0s);
     @include position(relative);
     @media (max-width: 999px) {
@@ -201,8 +202,10 @@
 
 @mixin map-back {
     @include flex;
+    min-height: 508px;
     @media (max-width: 999px) {
         display: block;
+        min-height: inherit;
     }
     .img {
         position: absolute;

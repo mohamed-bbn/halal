@@ -142,7 +142,9 @@
             position: relative;
             display: inline-block;
             margin: $zero $com-spacing-3;
-            @media (min-width: 1600px) {}
+            @media (max-width: 1199px) {
+                margin: $zero 6px;
+            }
         }
         &-link {
             @include flex;
@@ -150,6 +152,7 @@
             cursor: pointer;
             color: $white;
             height: 120px;
+            font-weight: 500;
             font-size: 18px;
             @include transition(all 0.5s ease-in-out 0s);
             @media (min-width: 1600px) {
@@ -212,7 +215,7 @@
         position: absolute;
         top: $fullwidth;
         right: $zero;
-        width: 180px;
+        width: 205px;
         height: auto;
         visibility: hidden;
         transform: translateY(1rem);
@@ -242,6 +245,7 @@
             border-bottom: 1px solid $dark;
             padding: $com-spacing-2 $com-spacing-3;
             color: $dark;
+            font-weight: 500;
             @media only screen and (max-width: 999px) {
                 padding: $com-spacing-1 $com-spacing-3;
             }
