@@ -1271,6 +1271,10 @@
         margin-top: $com-spacing-6;
         .field {
             margin-top: $com-spacing-6;
+            @media (max-width: 999px) {
+                max-width: $fullwidth;
+                flex: $fullwidth;
+            }
         }
         .toolbar {
             position: absolute;
@@ -1283,28 +1287,10 @@
             flex-wrap: wrap;
             gap: 5px;
         }
-        .toolbar span,
-        .toolbar select,
-        .toolbar input[type="color"] {
-            padding: 5px 10px;
-            cursor: pointer;
-            background: none;
-            border: 0;
-            svg {
-                width: 27px;
-                height: 27px;
-            }
-        }
-        .editor {
-            border: 1px solid transparent;
-            min-height: 220px;
-            padding: 65px .75rem .375rem .75rem;
-            background: $white;
-            border-radius: 8px;
-            &:focus,
-            &:hover {
-                border: 1px solid $dark;
-                outline: $zero;
+        span.label-text {
+            color: $blak;
+            a {
+                text-decoration: underline;
             }
         }
         label {
@@ -1366,6 +1352,104 @@
             display: flex;
             align-items: center;
             font-weight: 100;
+        }
+    }
+}
+
+.terms-and-conditions {
+    .information {
+        margin-bottom: $com-spacing-6;
+        &:last-child {
+            margin: $zero;
+        }
+        p {
+            line-height: 40px;
+            margin-top: $com-spacing-1;
+        }
+        .bank-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: $white;
+            margin-top: $com-spacing-6;
+        }
+        .bank-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            font-size: 15px;
+        }
+        .bank-table .label {
+            background: $dark;
+            color: $white;
+            width: 30%;
+        }
+        .bank-table .value {
+            direction: ltr;
+            text-align: $right;
+        }
+    }
+}
+
+.participants-item {
+    .inner {
+        position: relative;
+        width: $fullwidth;
+        background: $white;
+        border-radius: 30px;
+        overflow: hidden;
+        padding: $com-spacing-8 175px $com-spacing-8 $com-spacing-8;
+        @media (max-width: 999px) {
+            padding: $com-spacing-6;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            right: $zero;
+            top: $zero;
+            width: 128px;
+            height: $fullwidth;
+            background: url(../images/bg2.png) no-repeat center center/cover;
+            @media (max-width: 999px) {
+                display: none;
+            }
+        }
+        .minhead {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @media (max-width: 767px) {
+                display: block;
+            }
+        }
+        .form-control {
+            width: 300px;
+            border: 1px solid $dark;
+            background: #F7F7F7;
+            @media (max-width: 767px) {
+                width: $fullwidth;
+                margin-top: $com-spacing-4;
+            }
+        }
+        table {
+            width: $fullwidth;
+            margin-top: $com-spacing-4;
+        }
+        thead {
+            background-color: $dark;
+            color: $white;
+        }
+        th,
+        td {
+            padding: $com-spacing-3;
+            font-weight: 500;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f6f5;
+        }
+        .no-result {
+            margin-top: $com-spacing-4;
+            color: $red;
+            display: none;
+            text-align: center;
         }
     }
 }

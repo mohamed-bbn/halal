@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/intlTelInput.css">
+    <link href="css/froala_editor.min.css" rel="stylesheet" type="text/css">
     <!-- <link rel="stylesheet" href="css/home-ltr.css"> -->
     <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
@@ -593,42 +595,22 @@
 
                         <div class="col-sm-12 field">
                             <label for="">الملف التعريفي للشركة (يرجى كتابة تعريف مختصر )</label>
-                            <div class="position-relative">
-                                <div class="toolbar">
-                                    <span onclick="execCmd('bold')"> B </span>
-                                    <span onclick="execCmd('italic')"> I </span>
-                                    <span onclick="execCmd('underline')"> U</span>
-
-                                    <select onchange="execCmdArg('حجم الخط', this.value)">
-                                        <option value="3">حجم الخط</option>
-                                        <option value="1">صغير</option>
-                                        <option value="3">طبيعى</option>
-                                        <option value="5">كبير</option>
-                                        <option value="7">ضخم</option>
-                                   </select>
-
-                                    <input type="color" onchange="execCmdArg('foreColor', this.value)">
-                                    <span onclick="execCmd('justifyRight')" title="يمين">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                                            <path d="M2 12.5h12v-1H2v1zm0-3h8v-1H2v1zm0-3h12v-1H2v1zm0-3h8v-1H2v1z"/>
-                                        </svg>
-                                    </span>
-                                    <span onclick="execCmd('justifyCenter')" title="وسط">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                                                <path d="M2 12.5h12v-1H2v1zm2-3h8v-1H4v1zm-2-3h12v-1H2v1zm2-3h8v-1H4v1z"/>
-                                            </svg>
-                                    </span>
-                                    <span onclick="execCmd('justifyLeft')" title="شمال">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                                            <path d="M2 12.5h12v-1H2v1zm0-3h8v-1H2v1zm0-3h12v-1H2v1zm0-3h8v-1H2v1z"/>
-                                        </svg>
-                                    </span>
-                                </div>
-                                <div class="editor" contenteditable="true"> </div>
-                            </div>
+                            <div id="edit"></div>
                         </div>
                         <!-- End field -->
 
+
+                        <div class="col-sm-12 field">
+                            <label class="che-box"> 
+                                <input type="checkbox" name="colorCheckbox" value="box-2"><span class="label-text"> اوافق على <a href="terms-and-conditions.html" target="_blank">الشروط والاحكام</a>  </span>
+                            </label>
+                        </div>
+                        <!-- End field -->
+
+                        <div class="col-sm-12 field text-center">
+                            <button class="bottom" type="submit">  ارسال الأن</button>
+                        </div>
+                        <!-- End field -->
                     </div>
                     <!-- End row -->
                 </div>
@@ -725,6 +707,7 @@
     <script src="js/bootstrap.min.js "></script>
     <script src="js/jquery.flexslider.js"></script>
     <script src="js/intlTelInput.js"></script>
+    <script src="js/froala_editor.min.js"></script>
     <script src="js/plugin.js "></script>
 </body>
 

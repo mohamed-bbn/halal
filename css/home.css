@@ -1432,6 +1432,10 @@
   margin-top: 24px; }
   .care-options .reco-information .field {
     margin-top: 24px; }
+    @media (max-width: 999px) {
+      .care-options .reco-information .field {
+        max-width: 100%;
+        flex: 100%; } }
   .care-options .reco-information .toolbar {
     position: absolute;
     right: 0px;
@@ -1442,27 +1446,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 5px; }
-  .care-options .reco-information .toolbar span,
-  .care-options .reco-information .toolbar select,
-  .care-options .reco-information .toolbar input[type="color"] {
-    padding: 5px 10px;
-    cursor: pointer;
-    background: none;
-    border: 0; }
-    .care-options .reco-information .toolbar span svg,
-    .care-options .reco-information .toolbar select svg,
-    .care-options .reco-information .toolbar input[type="color"] svg {
-      width: 27px;
-      height: 27px; }
-  .care-options .reco-information .editor {
-    border: 1px solid transparent;
-    min-height: 220px;
-    padding: 65px .75rem .375rem .75rem;
-    background: #fff;
-    border-radius: 8px; }
-    .care-options .reco-information .editor:focus, .care-options .reco-information .editor:hover {
-      border: 1px solid #1a554d;
-      outline: 0px; }
+  .care-options .reco-information span.label-text {
+    color: #000; }
+    .care-options .reco-information span.label-text a {
+      text-decoration: underline; }
   .care-options .reco-information label {
     margin-bottom: 8px; }
   .care-options .reco-information .form-control {
@@ -1514,6 +1501,84 @@
     display: flex;
     align-items: center;
     font-weight: 100; }
+
+.terms-and-conditions .information {
+  margin-bottom: 24px; }
+  .terms-and-conditions .information:last-child {
+    margin: 0px; }
+  .terms-and-conditions .information p {
+    line-height: 40px;
+    margin-top: 4px; }
+  .terms-and-conditions .information .bank-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    margin-top: 24px; }
+  .terms-and-conditions .information .bank-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    font-size: 15px; }
+  .terms-and-conditions .information .bank-table .label {
+    background: #1a554d;
+    color: #fff;
+    width: 30%; }
+  .terms-and-conditions .information .bank-table .value {
+    direction: ltr;
+    text-align: right; }
+
+.participants-item .inner {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 48px 175px 48px 48px; }
+  @media (max-width: 999px) {
+    .participants-item .inner {
+      padding: 24px; } }
+  .participants-item .inner::before {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 128px;
+    height: 100%;
+    background: url(../images/bg2.png) no-repeat center center/cover; }
+    @media (max-width: 999px) {
+      .participants-item .inner::before {
+        display: none; } }
+  .participants-item .inner .minhead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    @media (max-width: 767px) {
+      .participants-item .inner .minhead {
+        display: block; } }
+  .participants-item .inner .form-control {
+    width: 300px;
+    border: 1px solid #1a554d;
+    background: #F7F7F7; }
+    @media (max-width: 767px) {
+      .participants-item .inner .form-control {
+        width: 100%;
+        margin-top: 16px; } }
+  .participants-item .inner table {
+    width: 100%;
+    margin-top: 16px; }
+  .participants-item .inner thead {
+    background-color: #1a554d;
+    color: #fff; }
+  .participants-item .inner th,
+  .participants-item .inner td {
+    padding: 12px;
+    font-weight: 500; }
+  .participants-item .inner tr:nth-child(even) {
+    background-color: #f2f6f5; }
+  .participants-item .inner .no-result {
+    margin-top: 16px;
+    color: #BD3C2F;
+    display: none;
+    text-align: center; }
 
 .scrollTopBtn {
   position: fixed;
@@ -1722,13 +1787,12 @@ body {
   .che-box input[type="checkbox"] + .label-text:before,
   .che-box input[type="radio"] + .label-text:before {
     content: ' ';
-    border: 1px solid #9DA4AE;
-    background: #fff;
+    background: #D9D9D9;
     width: 18px;
     height: 18px;
     position: absolute;
     z-index: 1;
-    top: 7px;
+    top: 3px;
     right: 0;
     border-radius: 4px; }
   .che-box input[type="radio"] + .label-text:before {
@@ -1739,8 +1803,7 @@ body {
     background: #1a554d;
     box-shadow: inset 0 0 0px 4px #fff; }
   .che-box input[type="checkbox"]:checked + .label-text:before {
-    background: #1a554d url(../images/tick.svg) no-repeat center center;
-    border: 1px solid #1a554d; }
+    background: #1a554d url(../images/tick.svg) no-repeat center center; }
   .che-box span.label-text {
     color: #1a554d;
     -moz-transition: all 0.5s ease-in-out 0s;
@@ -1882,13 +1945,10 @@ select.form-control {
   overflow: hidden; }
   @media (max-width: 999px) {
     .pagination {
-      margin-top: 24px;
-      padding-bottom: 12px;
-      overflow-x: scroll;
-      justify-content: flex-start; } }
+      margin-top: 24px; } }
   .pagination li {
     display: inline-block;
-    margin: 0px 8px; }
+    margin: 0px 4px; }
     .pagination li a,
     .pagination li span {
       display: flex;
@@ -1899,8 +1959,8 @@ select.form-control {
       -webkit-border-radius: 16px !important;
       border-radius: 16px !important;
       background-clip: padding-box;
-      min-width: 44px;
-      height: 44px;
+      min-width: 38px;
+      height: 38px;
       border: 0px;
       background: #E6E6E6;
       -moz-transition: all 0.5s ease-in-out 0s;

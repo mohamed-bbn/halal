@@ -149,7 +149,30 @@ $(window).on("load", function() {
 
     });
 
+    $(function() {
+        $('#edit').editable({
+            inlineMode: false,
+            alwaysBlank: true
+        })
+    });
 
+
+    $("#searchInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        var found = false;
+
+        $("#dataTable tbody tr").filter(function() {
+            var match = $(this).text().toLowerCase().indexOf(value) > -1;
+            $(this).toggle(match);
+            if (match) found = true;
+        });
+
+        if (!found && value !== "") {
+            $(".no-result").show();
+        } else {
+            $(".no-result").hide();
+        }
+    });
 
 });
 

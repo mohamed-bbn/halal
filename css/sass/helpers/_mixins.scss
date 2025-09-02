@@ -381,13 +381,12 @@
     input[type="checkbox"]+.label-text:before,
     input[type="radio"]+.label-text:before {
         content: ' ';
-        border: 1px solid #9DA4AE;
-        background: $white;
+        background: #D9D9D9;
         width: 18px;
         height: 18px;
         position: absolute;
         z-index: 1;
-        top: 7px;
+        top: 3px;
         right: 0;
         border-radius: 4px;
     }
@@ -400,7 +399,6 @@
     }
     input[type="checkbox"]:checked+.label-text:before {
         background: $dark url(../images/tick.svg) no-repeat center center;
-        border: 1px solid $dark;
     }
     span.label-text {
         color: $dark;
